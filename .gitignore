@@ -154,4 +154,10 @@ Thumbs.db
 ehthumbs.db
 
 # Data directory - Optional, uncomment if you want to ignore data
-# data/ 
+# data/
+
+# Ignore all files in the data/raw directory
+data/raw/*
+
+# Ignore all files in the data/processed directory
+data/processed/*

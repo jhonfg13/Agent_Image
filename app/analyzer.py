@@ -68,7 +68,7 @@ def analyze_visual_complexity(img_path: str) -> dict | None:
 
         edges = cv2.Canny(gray, lower, upper)
         edge_count = np.sum(edges > 0)
-        edge_density = float(round(edge_count / pixel_count, 6) if pixel_count > 0 else 0)
+        edge_density = float(round(edge_count / pixel_count, 4) if pixel_count > 0 else 0)
 
         # 3. Varianza de la escala de grises (complejidad tonal)
         variance = float(round(np.var(gray), 2))
@@ -90,7 +90,7 @@ def analyze_visual_complexity(img_path: str) -> dict | None:
         return {
             # Original Metrics
             "filename": os.path.basename(img_path),
-            "image_size": f"{width}x{height}",
+            "width_height": f"{width}x{height}",
             "entropy": entropy,
             "color_entropy": color_entropy,
             "edge_count": int(edge_count),
@@ -100,7 +100,6 @@ def analyze_visual_complexity(img_path: str) -> dict | None:
             # Normalized Metrics (0-1 range)
             "entropy_normalized": entropy_normalized,
             "color_entropy_normalized": color_entropy_normalized,
-            "edge_density_normalized": edge_density,
             "color_variance_normalized": variance_normalized,
         }
 

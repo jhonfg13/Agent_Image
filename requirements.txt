@@ -2,4 +2,4 @@
 requests 
 opencv-python
 numpy
-scikit-image 
+scikit-image
