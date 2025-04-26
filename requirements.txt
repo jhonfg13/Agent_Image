@@ -1,0 +1,5 @@
+# Project dependencies 
+requests 
+opencv-python
+numpy
+scikit-image 
