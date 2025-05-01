@@ -1,5 +1,5 @@
 # Core agent logic for image analysis
-import google as genai
+from google import genai
 from google.genai import types
 import json
 import os
